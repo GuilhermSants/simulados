@@ -743,3 +743,109 @@ a{ color:var(--marca); }
   body{ background:#fff; }
   .questao{ break-inside:avoid; }
 }
+
+/* ---------- Indicador de sincronização ---------- */
+
+.estado-nuvem{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.04em;
+  text-decoration:none;
+  padding:7px 11px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.22);
+  color:rgba(244,247,249,.72);
+  white-space:nowrap;
+  align-self:center;
+  transition:border-color .15s, color .15s;
+}
+
+.estado-nuvem:hover{ border-color:rgba(255,255,255,.55); color:#F4F7F9; }
+
+.estado-nuvem::before{
+  content:"";
+  display:inline-block;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  margin-right:7px;
+  vertical-align:middle;
+  background:currentColor;
+}
+
+.estado-ok{ color:#8FD9B4; border-color:rgba(143,217,180,.4); }
+.estado-ativo{ color:#F0C978; border-color:rgba(240,201,120,.4); }
+.estado-erro{ color:#F2A69C; border-color:rgba(242,166,156,.45); }
+
+/* ---------- Textos auxiliares ---------- */
+
+.linha-apoio{
+  max-width:62ch;
+  margin:0;
+  color:var(--tinta-fraca);
+}
+
+.nota-seca{
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--tinta-fraca);
+  margin:0;
+}
+
+.recado{
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--certo);
+}
+
+.recado-erro{ color:var(--errado); }
+
+.sobrancelha-grifo{ color:#7A4E08; }
+.sobrancelha-andamento{ color:var(--marca); }
+
+.vazio{ margin-top:22px; }
+
+/* ---------- Ficha em andamento ---------- */
+
+.ficha-andamento{ border-top-width:3px; background:#FBFDFE; }
+
+/* ---------- Formulário de conta ---------- */
+
+.formulario{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+  gap:14px;
+  margin:0 0 18px;
+  max-width:560px;
+}
+
+.formulario label{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--tinta-fraca);
+}
+
+.formulario input{
+  font-family:var(--serif);
+  font-size:16px;
+  color:var(--tinta);
+  background:#fff;
+  border:1.5px solid var(--linha-forte);
+  border-radius:var(--raio);
+  padding:10px 12px;
+  text-transform:none;
+  letter-spacing:normal;
+}
+
+.formulario input:focus{ border-color:var(--marca); outline:none; box-shadow:0 0 0 3px var(--marca-clara); }
+
+@media (max-width: 620px){
+  .topo-interno{ gap:10px; }
+  .topo-acoes{ width:100%; justify-content:flex-start; flex-wrap:wrap; }
+  .estado-nuvem{ order:-1; }
+}

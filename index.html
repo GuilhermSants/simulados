@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Caderno de Simulados</title>
-<meta name="description" content="Simulados de concurso com correção imediata e caderno de revisão dos erros.">
+<meta name="description" content="Simulados de concurso com correção imediata, caderno de revisão dos erros e progresso sincronizado.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
@@ -18,10 +18,11 @@
       <span class="marca-selo">CS</span>
       <span class="marca-texto">
         <strong>Caderno de Simulados</strong>
-        <small id="marca-sub">provas, gabarito e revisão dos erros</small>
+        <small>provas, gabarito e revisão dos erros</small>
       </span>
     </a>
     <nav class="topo-acoes">
+      <a class="estado-nuvem estado-neutro" id="estado-nuvem" href="#/conta" title="Sincronização">carregando…</a>
       <a class="botao botao-fantasma" href="#/">Provas</a>
       <a class="botao botao-fantasma" href="#/progresso">Progresso</a>
     </nav>
@@ -31,14 +32,18 @@
 <main id="app" class="palco" aria-live="polite"></main>
 
 <footer class="rodape">
-  <p>Suas respostas ficam gravadas neste navegador. Para levar o progresso a outra máquina, use <a href="#/progresso">exportar progresso</a>.</p>
+  <p>Progresso guardado neste navegador e, se você entrar na sua conta, também na nuvem.</p>
 </footer>
 
-<!-- ===== PROVAS ===== -->
-<!-- Para adicionar uma prova nova: crie o arquivo em data/ e inclua uma linha aqui. -->
+<script src="config.js"></script>
 <script src="assets/app.js"></script>
+
+<!-- ===== PROVAS =====
+     Para adicionar uma prova: crie o arquivo em data/ e inclua uma linha aqui. -->
 <script src="data/prova-exemplo.js"></script>
+
 <script>iniciar();</script>
+<script type="module" src="assets/sync.js"></script>
 
 </body>
 </html>

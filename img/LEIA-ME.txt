@@ -1,0 +1,1 @@
+Coloque aqui as figuras das questões (png/jpg) e referencie com imagem: "img/nome.png"
