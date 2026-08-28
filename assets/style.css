@@ -412,10 +412,37 @@ a{ color:var(--marca); }
 .apoio{
   background:#F4F7F9;
   border-left:2px solid var(--linha-forte);
-  padding:12px 16px;
-  margin:0 0 14px;
+  padding:10px 16px;
+  margin:0 0 16px;
   font-size:16px;
 }
+
+.apoio > summary{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--tinta-fraca);
+  cursor:pointer;
+  list-style:none;
+  padding:2px 0;
+}
+
+.apoio > summary::-webkit-details-marker{ display:none; }
+
+.apoio > summary::before{
+  content:"▸ ";
+  display:inline-block;
+  transition:transform .15s;
+}
+
+.apoio[open] > summary::before{ content:"▾ "; }
+
+.apoio > summary:hover{ color:var(--marca); }
+
+.apoio-corpo{ padding-top:10px; }
+.apoio-corpo p{ margin:0 0 12px; }
+.apoio-corpo p:last-child{ margin-bottom:0; }
 
 .questao-imagem{
   display:block;

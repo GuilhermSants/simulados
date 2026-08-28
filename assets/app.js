@@ -11,16 +11,23 @@ var LETRAS = ["A", "B", "C", "D", "E", "F", "G"];
 --------------------------------------------------------- */
 
 function registrarProva(prova) {
+  var apoiosVistos = {};
   PROVAS.push({
     id: prova.id,
     titulo: prova.titulo || "Prova sem título",
     subtitulo: prova.subtitulo || "",
     questoes: (prova.questoes || []).map(function (q, i) {
+      var repetido = false;
+      if (q.apoio) {
+        repetido = apoiosVistos[q.apoio] === true;
+        apoiosVistos[q.apoio] = true;
+      }
       return {
         qid: String(q.id || i + 1),
         numero: i + 1,
         enunciado: q.enunciado || "",
         apoio: q.apoio || "",
+        apoioRepetido: repetido,
         imagem: q.imagem || "",
         html: q.html === true,
         alternativas: q.alternativas || [],
@@ -405,7 +412,12 @@ function blocoQuestao(prova, q, escolha, eRevisao) {
   }
   html += '</div>';
 
-  if (q.apoio) html += '<div class="apoio">' + paragrafos(q.apoio, q.html) + '</div>';
+  if (q.apoio) {
+    /* o mesmo texto-base serve a várias questões: abre na primeira, recolhe nas demais */
+    var aberto = !q.apoioRepetido ? " open" : "";
+    html += '<details class="apoio"' + aberto + '><summary>Texto de apoio</summary>';
+    html += '<div class="apoio-corpo">' + paragrafos(q.apoio, q.html) + '</div></details>';
+  }
   if (q.imagem) html += '<img class="questao-imagem" src="' + escapar(q.imagem) + '" alt="Figura da questão ' + q.numero + '">';
   html += '<div class="questao-texto">' + paragrafos(q.enunciado, q.html) + '</div>';
 

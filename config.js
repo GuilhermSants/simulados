@@ -10,6 +10,6 @@
    ========================================================= */
 
 window.SUPABASE = {
-  url: "https://gqmxpfujypzkvfpyvjoj.supabase.co",
-  anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxbXhwZnVqeXB6a3ZmcHl2am9qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc4NTI0MzQsImV4cCI6MjEwMzQyODQzNH0.eIszQid_yr8v_4ce93X3Z8LB2L9fZTam_XTAVhO-AUg"
+  url: "https://SEU-PROJETO.supabase.co",
+  anonKey: "COLE-AQUI-A-CHAVE-ANON"
 };
