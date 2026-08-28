@@ -24,7 +24,7 @@ function registrarProva(prova) {
       }
       return {
         qid: String(q.id || i + 1),
-        numero: i + 1,
+        numero: q.num || i + 1,
         enunciado: q.enunciado || "",
         apoio: q.apoio || "",
         apoioRepetido: repetido,
