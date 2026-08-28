@@ -876,3 +876,13 @@ a{ color:var(--marca); }
   .topo-acoes{ width:100%; justify-content:flex-start; flex-wrap:wrap; }
   .estado-nuvem{ order:-1; }
 }
+
+/* alternativas que são imagens (gráficos, esquemas) */
+.alternativa-texto img{
+  display:block;
+  max-width:100%;
+  height:auto;
+  border:1px solid var(--linha);
+  border-radius:2px;
+  background:#fff;
+}
